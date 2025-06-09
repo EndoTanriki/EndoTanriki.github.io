@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Prinsip Inklusi dan Eksklusi - Materi & Soal</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+    /* Reset & base */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #fff;
+      color: #6b7280;
+      line-height: 1.6;
+      font-size: 18px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0 24px 64px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    a {
+      color: #374151;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    a:hover, a:focus {
+      color: #111827;
+      outline: none;
+      text-decoration: underline;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      background: #fff;
+      border-bottom: 1px solid #e5e7eb;
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 1px 5px rgb(0 0 0 / 0.05);
+      z-index: 100;
+      box-shadow: 0 6px 15px rgb(17 24 39 / 0.5);
+    }
+    header .logo {
+      font-weight: 700;
+      font-size: 28px;
+      color: #111827;
+      user-select: none;
+      letter-spacing: -0.02em;
+    }
+    nav a {
+      margin-left: 28px;
+      font-weight: 600;
+      font-size: 16px;
+      color: #6b7280;
+      cursor: pointer;
+      position: relative;
+    }
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 0%;
+      height: 2px;
+      background: #111827;
+      transition: width 0.3s cubic-bezier(0.4,0,0.2,1);
+      border-radius: 2px;
+    }
+    nav a:hover::after,
+    nav a:focus::after {
+      width: 100%;
+    }
+
+    main {
+      max-width: 1200px;
+      width: 100%;
+      padding: 64px 24px 64px;
+    }
+
+    .hero {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 56px;
+    }
+    .hero-title {
+      font-weight: 800;
+      font-size: 48px;
+      color: #111827;
+      line-height: 1.1;
+      margin-bottom: 18px;
+      letter-spacing: -0.03em;
+    }
+    .hero-subtitle {
+      font-size: 20px;
+      color: #4b5563;
+      margin-bottom: 48px;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+      font-weight: 500;
+    }
+    .btn-primary {
+      padding: 16px 36px;
+      border-radius: 0.75rem;
+      background-color: #111827;
+      color: white;
+      font-weight: 700;
+      font-size: 18px;
+      border: none;
+      cursor: pointer;
+      user-select: none;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 6px 15px rgb(17 24 39 / 0.5);
+    }
+    .btn-primary:hover,
+    .btn-primary:focus {
+      background-color: #374151;
+      outline: none;
+      box-shadow: 0 6px 24px rgb(55 65 81 / 0.8);
+    }
+
+    section {
+      background: #f9fafb;
+      border-radius: 0.75rem;
+      box-shadow: 0 6px 15px rgb(17 24 39 / 0.5);
+      padding: 40px 48px;
+      margin-bottom: 56px;
+      color: #374151;
+    }
+    h2 {
+      font-weight: 700;
+      font-size: 36px;
+      margin-bottom: 28px;
+      color: #111827;
+    }
+    p, li {
+      margin-bottom: 18px;
+      font-weight: 500;
+    }
+    ul, ol {
+      padding-left: 32px;
+      margin-bottom: 32px;
+      color: #4b5563;
+      font-weight: 500;
+    }
+    code {
+      background: #e5e7eb;
+      padding: 0 8px;
+      border-radius: 6px;
+      font-family: 'Fira Mono', monospace;
+      font-size: 0.95em;
+      color: #111827;
+    }
+
+    .math-block {
+      background: white;
+      padding: 24px 32px;
+      margin: 28px 0 36px;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #111827;
+      border-radius: 0.75rem;
+      box-shadow: 0 6px 15px rgb(17 24 39 / 0.5);
+      font-family: 'Cambria Math', 'Times New Roman', serif;
+      overflow-x: auto;
+      user-select: text;
+    }
+
+    .question {
+      margin-bottom: 24px;
+    }
+    .question-title {
+      font-weight: 700;
+      font-size: 22px;
+      color: #111827;
+      margin-bottom: 12px;
+    }
+    .answer {
+      margin-top: 12px;
+      background: white;
+      border-radius: 0.75rem;
+      box-shadow: 0 4px 15px rgb(0 0 0 / 0.07);
+      padding: 24px 32px;
+      color: #4b5563;
+      font-size: 17px;
+      font-weight: 500;
+      display: none;
+      white-space: pre-line;
+    }
+
+    .btn-show {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 22px;
+      border-radius: 0.75rem;
+      background-color: #111827;
+      color: #fff;
+      font-weight: 700;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+      user-select: none;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 12px rgb(17 24 39 / 0.6);
+      letter-spacing: 0.02em;
+    }
+    .btn-show:hover,
+    .btn-show:focus {
+      background-color: #374151;
+      outline: none;
+      box-shadow: 0 6px 20px rgb(55 65 81 / 0.85);
+    }
+
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 36px;
+      }
+      .hero-subtitle {
+        font-size: 16px;
+        max-width: 100%;
+      }
+      section {
+        padding: 32px 24px;
+      }
+      .answer {
+        font-size: 16px;
+        padding: 20px 24px;
+      }
+      .btn-show {
+        font-size: 15px;
+        padding: 10px 20px;
+      }
+    }
+  </style>
+  <link rel=”icon” href=”file:///C:/Users/Tanri/Downloads/OSN.PNG”>
+</head>
+<body>
+  <header role="banner">
+    <div class="logo" tabindex="0" aria-label="Logo Prinsip Inklusi dan Eksklusi">PIE Edu</div>
+    <nav role="navigation" aria-label="Navigasi Utama">
+      <a href="#penjelasan" tabindex="0">Penjelasan</a>
+      <a href="#soal" tabindex="0">Soal & Jawaban</a>
+      <a href="https://www.wikipedia.org/" target="_blank" rel="noopener noreferrer" tabindex="0" aria-label="Wikipedia - Prinsip Inklusi dan Eksklusi">Referensi</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="headline">
+      <h1 id="headline" class="hero-title">Prinsip Inklusi dan Eksklusi</h1>
+      <p class="hero-subtitle">
+        PIE adalah teknik penting dalam kombinatorik dan teori himpunan, digunakan untuk menyelesaikan masalah penghitungan seperti menghitung jumlah cara memilih atau menghitung probabilitas suatu kejadian.
+      </p>
+      <button 
+        class="btn-primary" 
+        onclick="document.getElementById('penjelasan').scrollIntoView({ behavior: 'smooth' });" 
+        aria-label="Scroll ke penjelasan">
+        Mulai Belajar
+      </button>
+    </section>
+
+    <section id="penjelasan" aria-labelledby="penjelasan-heading">
+      <h2 id="penjelasan-heading">Penjelasan Prinsip Inklusi dan Eksklusi</h2>
+      <p>Prinsip inklusi-eksklusi (PIE) adalah suatu metode matematika untuk menghitung jumlah elemen dalam gabungan beberapa himpunan, dengan mempertimbangkan elemen-elemen yang tumpang tindih. <br>PIE membantu menghitung jumlah total elemen dalam gabungan dengan menghindari perhitungan ganda elemen yang ada di beberapa himpunan sekaligus. 
+        <br><br>Cara Kerja PIE:
+        <br><br>PIE bekerja dengan cara menjumlahkan jumlah elemen dalam setiap himpunan, kemudian mengurangkannya dengan jumlah elemen dalam irisan (tumpang tindih) antara himpunan-himpunan tersebut. <br>Jika masih ada irisan di antara irisan-irisan tersebut, maka harus dikurangi lagi, dan seterusnya.</p>
+      <div class="math-block" role="math" aria-label="Rumus Inklusi dan Eksklusi untuk dua himpunan">
+        |A ∪ B| = |A| + |B| - |A ∩ B| 
+      </div>
+      <p>Di mana:</p>
+      <ul>
+        <li><code>|A|</code>: jumlah elemen himpunan <strong>A</strong></li>
+        <li><code>|B|</code>: jumlah elemen himpunan <strong>B</strong></li>
+        <li><code>|A ∩ B|</code>: jumlah elemen pada irisan <strong>A</strong> dan <strong>B</strong></li>
+      </ul>
+      <p>Untuk tiga himpunan ( A ), ( B ), dan ( C ), rumusnya menjadi:</p>
+      <div class="math-block" role="math" aria-label="Rumus Inklusi dan Eksklusi untuk tiga himpunan">
+         |A ∪ B ∪ C| = |A| + |B| + |C| - |A ∩ B| - |A ∩ C| - |B ∩ C| + |A ∩ B ∩ C| 
+      </div>
+      <br>
+    </section>
+
+    <section id="soal" aria-labelledby="soal-heading">
+      <h2 id="soal-heading">Soal dan Jawaban</h2>
+
+      <article class="question" aria-labelledby="q1">
+        <h3 id="q1" class="question-title">Soal 1</h3>
+        <p>Dalam sebuah kelas terdapat 30 siswa. 18 siswa menyukai matematika, 15 siswa menyukai fisika, dan 10 siswa menyukai kedua mata pelajaran tersebut. Berapa banyak siswa yang menyukai setidaknya satu dari kedua mata pelajaran?</p>
+        <button class="btn-show" aria-expanded="false" aria-controls="answer1" onclick="toggleAnswer(this, 'answer1')">Tampilkan Jawaban</button>
+        <div id="answer1" class="answer" aria-live="polite" aria-hidden="true">
+          <div class="math-block">|M ∪ F| = |M| + |F| - |M ∩ F| = 18 + 15 - 10 = 23</div>
+          Jadi, 23 siswa menyukai setidaknya satu dari kedua mata pelajaran tersebut.
+        </div>
+      </article>
+
+      <article class="question" aria-labelledby="q2">
+        <h3 id="q2" class="question-title">Soal 2</h3>
+        <p>Di sebuah perpustakaan terdapat 100 buku. 40 buku adalah novel, 25 buku adalah biografi, dan 10 buku adalah novel yang juga merupakan biografi. Berapa banyak buku yang bukan novel maupun biografi?</p>
+        <button class="btn-show" aria-expanded="false" aria-controls="answer2" onclick="toggleAnswer(this, 'answer2')">Tampilkan Jawaban</button>
+        <div id="answer2" class="answer" aria-live="polite" aria-hidden="true">
+          <div class="math-block">|N ∪ B| = |N| + |B| - |N ∩ B| = 40 + 25 - 10 = 55</div>
+          Buku yang bukan novel maupun biografi adalah:<br />
+          <div class="math-block">100 - 55 = 45</div>
+        </div>
+      </article>
+
+      <article class="question" aria-labelledby="q3">
+        <h3 id="q3" class="question-title">Soal 3</h3>
+        <p>Dalam sebuah survei, 50 orang menyukai kopi, 40 orang menyukai teh, dan 20 orang menyukai keduanya. Berapa banyak orang yang menyukai setidaknya satu dari kedua minuman tersebut?</p>
+        <button class="btn-show" aria-expanded="false" aria-controls="answer3" onclick="toggleAnswer(this, 'answer3')">Tampilkan Jawaban</button>
+        <div id="answer3" class="answer" aria-live="polite" aria-hidden="true">
+          <div class="math-block">|K ∪ T| = |K| + |T| - |K ∩ T| = 50 + 40 - 20 = 70</div>
+          Jadi, 70 orang menyukai setidaknya satu dari kedua minuman tersebut.
+        </div>
+      </article>
+
+      <article class="question" aria-labelledby="q4">
+        <h3 id="q4" class="question-title">Soal 4</h3>
+        <p>Di sebuah sekolah terdapat 100 siswa. 60 siswa mengikuti olahraga basket, 50 siswa mengikuti olahraga sepak bola, dan 30 siswa mengikuti kedua olahraga tersebut. Berapa banyak siswa yang tidak mengikuti salah satu dari kedua olahraga tersebut?</p>
+        <button class="btn-show" aria-expanded="false" aria-controls="answer4" onclick="toggleAnswer(this, 'answer4')">Tampilkan Jawaban</button>
+        <div id="answer4" class="answer" aria-live="polite" aria-hidden="true">
+          <div class="math-block">|B ∪ S| = |B| + |S| - |B ∩ S| = 60 + 50 - 30 = 80</div>
+          Siswa yang tidak mengikuti salah satu olahraga adalah:<br />
+          <div class="math-block">100 - 80 = 20</div>
+        </div>
+      </article>
+
+      <article class="question" aria-labelledby="q5">
+        <h3 id="q5" class="question-title">Soal 5</h3>
+        <p>Dalam sebuah kompetisi, 70 peserta menyukai matematika, 60 peserta menyukai fisika, dan 25 peserta menyukai keduanya. Berapa banyak peserta yang menyukai setidaknya satu dari kedua mata pelajaran?</p>
+        <button class="btn-show" aria-expanded="false" aria-controls="answer5" onclick="toggleAnswer(this, 'answer5')">Tampilkan Jawaban</button>
+        <div id="answer5" class="answer" aria-live="polite" aria-hidden="true">
+          <div class="math-block">|M ∪ F| = |M| + |F| - |M ∩ F| = 70 + 60 - 25 = 105</div>
+          Jadi, 105 peserta menyukai setidaknya satu mata pelajaran.
+        </div>
+      </article>
+
+      <article class="question" aria-labelledby="q6">
+        <h3 id="q6" class="question-title">Soal 6</h3>
+        <p>Di sebuah acara, 80 orang hadir. 50 orang menyukai musik, 40 orang menyukai tari, dan 10 orang menyukai keduanya. Berapa banyak orang yang tidak menyukai musik maupun tari?</p>
+        <button class="btn-show" aria-expanded="false" aria-controls="answer6" onclick="toggleAnswer(this, 'answer6')">Tampilkan Jawaban</button>
+        <div id="answer6" class="answer" aria-live="polite" aria-hidden="true">
+          <div class="math-block">|M ∪ T| = |M| + |T| - |M ∩ T| = 50 + 40 - 10 = 80</div>
+          Karena hasilnya menyamai total orang, tidak ada yang tidak menyukai keduanya.
+        </div>
+      </article>
+
+      <article class="question" aria-labelledby="q7">
+        <h3 id="q7" class="question-title">Soal 7</h3>
+        <p>Dalam sebuah survei, 100 orang ditanya tentang hobi mereka. 60 orang menyukai membaca, 50 orang menyukai menulis, dan 20 orang menyukai keduanya. Berapa banyak orang yang tidak menyukai membaca maupun menulis?</p>
+        <button class="btn-show" aria-expanded="false" aria-controls="answer7" onclick="toggleAnswer(this, 'answer7')">Tampilkan Jawaban</button>
+        <div id="answer7" class="answer" aria-live="polite" aria-hidden="true">
+          <div class="math-block">|R ∪ W| = |R| + |W| - |R ∩ W| = 60 + 50 - 20 = 90</div>
+          Orang yang tidak menyukai keduanya:<br />
+          <div class="math-block">100 - 90 = 10</div>
+        </div>
+      </article>
+
+      <article class="question" aria-labelledby="q8">
+        <h3 id="q8" class="question-title">Soal 8</h3>
+        <p>Di sebuah universitas, 200 mahasiswa terdaftar. 120 mahasiswa mengambil mata kuliah A, 100 mahasiswa mengambil mata kuliah B, dan 50 mahasiswa mengambil kedua mata kuliah tersebut. Berapa banyak mahasiswa yang tidak mengambil salah satu dari kedua mata kuliah?</p>
+        <button class="btn-show" aria-expanded="false" aria-controls="answer8" onclick="toggleAnswer(this, 'answer8')">Tampilkan Jawaban</button>
+        <div id="answer8" class="answer" aria-live="polite" aria-hidden="true">
+          <div class="math-block">|A ∪ B| = |A| + |B| - |A ∩ B| = 120 + 100 - 50 = 170</div>
+          Jadi, mahasiswa yang tidak mengambil salah satu mata kuliah adalah:<br />
+          <div class="math-block">200 - 170 = 30</div>
+        </div>
+      </article>
+
+      <article class="question" aria-labelledby="q9">
+        <h3 id="q9" class="question-title">Soal 9</h3>
+        <p>Dalam sebuah kelas, 45 siswa menyukai olahraga, 30 siswa menyukai seni, dan 15 siswa menyukai keduanya. Berapa banyak siswa yang menyukai setidaknya satu dari kedua kegiatan tersebut?</p>
+        <button class="btn-show" aria-expanded="false" aria-controls="answer9" onclick="toggleAnswer(this, 'answer9')">Tampilkan Jawaban</button>
+        <div id="answer9" class="answer" aria-live="polite" aria-hidden="true">
+          <div class="math-block">|O ∪ S| = |O| + |S| - |O ∩ S| = 45 + 30 - 15 = 60</div>
+          Jadi, 60 siswa menyukai setidaknya satu dari kedua kegiatan.
+        </div>
+      </article>
+
+      <article class="question" aria-labelledby="q10">
+        <h3 id="q10" class="question-title">Soal 10</h3>
+        <p>Di sebuah festival, 150 orang hadir. 90 orang menyukai makanan, 70 orang menyukai minuman, dan 40 orang menyukai keduanya. Berapa banyak orang yang tidak menyukai makanan maupun minuman?</p>
+        <button class="btn-show" aria-expanded="false" aria-controls="answer10" onclick="toggleAnswer(this, 'answer10')">Tampilkan Jawaban</button>
+        <div id="answer10" class="answer" aria-live="polite" aria-hidden="true">
+          <div class="math-block">|M ∪ D| = |M| + |D| - |M ∩ D| = 90 + 70 - 40 = 120</div>
+          Orang yang tidak menyukai keduanya:<br />
+          <div class="math-block">150 - 120 = 30</div>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <script>
+    function toggleAnswer(button, answerId) {
+      const answerEl = document.getElementById(answerId);
+      const isVisible = answerEl.style.display === 'block';
+      answerEl.style.display = isVisible ? 'none' : 'block';
+      button.setAttribute('aria-expanded', String(!isVisible));
+      answerEl.setAttribute('aria-hidden', String(isVisible));
+      if (!isVisible) {
+        answerEl.focus();
+      }
+    }
+  </script>
+</body>
+</html>
