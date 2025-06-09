@@ -199,6 +199,19 @@
       white-space: pre-line;
     }
 
+    .per {
+      margin-top: 12px;
+      background: white;
+      border-radius: 0.75rem;
+      box-shadow: 0 4px 15px rgb(0 0 0 / 0.07);
+      padding: 24px 32px;
+      color: #4b5563;
+      font-size: 17px;
+      font-weight: 500;
+      display: none;
+      white-space: pre-line;
+    }
+
     .btn-show {
       display: inline-block;
       margin-top: 10px;
@@ -292,30 +305,56 @@
 
     <section id="soal" aria-labelledby="soal-heading">
       <h2 id="soal-heading">Soal dan Jawaban</h2>
+      <script>
+        function checkAnswer(button, answerId, userAnswerId, correctAnswer) {
+          const userAnswer = document.getElementById(userAnswerId).value;
+          const answerEl = document.getElementById(answerId);
+          
+          if (parseInt(userAnswer) === correctAnswer) {
+            answerEl.style.display = 'block';
+            button.setAttribute('aria-expanded', 'true');
+            answerEl.setAttribute('aria-hidden', 'false');
+          } else {
+            alert("Jawaban Anda salah. Silakan coba lagi. DAN JANGAN MENCOBA UNTUK MENGINTIP JAWABAN!!!");
+          }
+        }
+        </script>
 
       <article class="question" aria-labelledby="q1">
         <h3 id="q1" class="question-title">Soal 1</h3>
         <p>Dalam sebuah kelas terdapat 30 siswa. 18 siswa menyukai matematika, 15 siswa menyukai fisika, dan 10 siswa menyukai kedua mata pelajaran tersebut. Berapa banyak siswa yang menyukai setidaknya satu dari kedua mata pelajaran?</p>
-        <button class="btn-show" aria-expanded="false" aria-controls="answer1" onclick="toggleAnswer(this, 'answer1')">Tampilkan Jawaban</button>
+        <button class="btn-show" aria-expanded="false" aria-controls="per1" onclick="toggleAnswer(this, 'per1')">Tampilkan Jawaban</button>
+        <div id="per1" class="answer" aria-live="polite" aria-hidden="true">
+        <input type="text" id="userAnswer1" placeholder="Ketik jawaban Anda di sini" aria-label="Jawaban Anda untuk Soal 1" />
+        <button class="btn-show" aria-expanded="false" aria-controls="answer1" onclick="checkAnswer(this, 'answer1', 'userAnswer1', 23)">Tampilkan Jawaban</button>
+        </div>
         <div id="answer1" class="answer" aria-live="polite" aria-hidden="true">
-          <div class="math-block">|M ∪ F| = |M| + |F| - |M ∩ F| = 18 + 15 - 10 = 23</div>
-          Jadi, 23 siswa menyukai setidaknya satu dari kedua mata pelajaran tersebut.
+        <div class="math-block">|M ∪ F| = |M| + |F| - |M ∩ F| = 18 + 15 - 10 = 23</div>
+    Jadi, 23 siswa menyukai setidaknya satu dari kedua mata pelajaran tersebut.
         </div>
       </article>
 
       <article class="question" aria-labelledby="q2">
         <h3 id="q2" class="question-title">Soal 2</h3>
-        <p>A=1,2,3,4<br>B=3,4,5,6<br>C=4,5,6,7</p>
-        <button class="btn-show" aria-expanded="false" aria-controls="answer2" onclick="toggleAnswer(this, 'answer2')">Tampilkan Jawaban</button>
+        <p>|A|=>1,2,3,4<br>|B|=>3,4,5,6<br>|C|=>4,5,6,7</p>
+        <button class="btn-show" aria-expanded="false" aria-controls="per2" onclick="toggleAnswer(this, 'per2')">Tampilkan Jawaban</button>
+        <div id="per2" class="answer" aria-live="polite" aria-hidden="true">
+        <input type="text" id="userAnswer2" placeholder="Ketik jawaban Anda di sini" aria-label="Jawaban Anda untuk Soal 2" />
+        <button class="btn-show" aria-expanded="false" aria-controls="answer2" onclick="checkAnswer(this, 'answer2', 'userAnswer2', 7)">Tampilkan Jawaban</button>
+        </div>
         <div id="answer2" class="answer" aria-live="polite" aria-hidden="true">
-          <div class="math-block">A=4<br>B=4<br>C=4<br>|A ∩ B|=3,4=2<br>|A ∩ C|=4=1<br>|B ∩ C|=4,5,6=3<br>|A ∩ B ∩ C|=4=1<br>Maka, |A U B U C|=4+4+4-2-1-3+1=7
+          <div class="math-block">|A|=>4<br>|B|=>4<br>|C|=>4<br>|A ∩ B|=3,4=>2<br>|A ∩ C|=4=>1<br>|B ∩ C|=4,5,6=>3<br>|A ∩ B ∩ C|=4=>1<br>Maka, |A U B U C|=4+4+4-2-1-3+1=>7</div>
         </div>
       </article>
 
       <article class="question" aria-labelledby="q3">
         <h3 id="q3" class="question-title">Soal 3</h3>
         <p>Dalam sebuah survei, 50 orang menyukai kopi, 40 orang menyukai teh, dan 20 orang menyukai keduanya. Berapa banyak orang yang menyukai setidaknya satu dari kedua minuman tersebut?</p>
-        <button class="btn-show" aria-expanded="false" aria-controls="answer3" onclick="toggleAnswer(this, 'answer3')">Tampilkan Jawaban</button>
+        <button class="btn-show" aria-expanded="false" aria-controls="per3" onclick="toggleAnswer(this, 'per3')">Tampilkan Jawaban</button>
+        <div id="per3" class="answer" aria-live="polite" aria-hidden="true">
+        <input type="text" id="userAnswer3" placeholder="Ketik jawaban Anda di sini" aria-label="Jawaban Anda untuk Soal 3" />
+        <button class="btn-show" aria-expanded="false" aria-controls="answer3" onclick="checkAnswer(this, 'answer3', 'userAnswer3', 70)">Tampilkan Jawaban</button>
+        </div>
         <div id="answer3" class="answer" aria-live="polite" aria-hidden="true">
           <div class="math-block">|K ∪ T| = |K| + |T| - |K ∩ T| = 50 + 40 - 20 = 70</div>
           Jadi, 70 orang menyukai setidaknya satu dari kedua minuman tersebut.
@@ -324,19 +363,25 @@
 
       <article class="question" aria-labelledby="q4">
         <h3 id="q4" class="question-title">Soal 4</h3>
-        <p>Di sebuah sekolah terdapat 100 siswa. 60 siswa mengikuti olahraga basket, 50 siswa mengikuti olahraga sepak bola, dan 30 siswa mengikuti kedua olahraga tersebut. Berapa banyak siswa yang tidak mengikuti salah satu dari kedua olahraga tersebut?</p>
-        <button class="btn-show" aria-expanded="false" aria-controls="answer4" onclick="toggleAnswer(this, 'answer4')">Tampilkan Jawaban</button>
+        <p>|A|=>1,2,3,4,5<br>|B|=>4,5,6,7<br>|C|=>5,7,8,9</p>
+        <button class="btn-show" aria-expanded="false" aria-controls="per4" onclick="toggleAnswer(this, 'per4')">Tampilkan Jawaban</button>
+        <div id="per4" class="answer" aria-live="polite" aria-hidden="true">
+        <input type="text" id="userAnswer4" placeholder="Ketik jawaban Anda di sini" aria-label="Jawaban Anda untuk Soal 4" />
+        <button class="btn-show" aria-expanded="false" aria-controls="answer4" onclick="checkAnswer(this, 'answer4', 'userAnswer4', 9)">Tampilkan Jawaban</button>
+        </div>
         <div id="answer4" class="answer" aria-live="polite" aria-hidden="true">
-          <div class="math-block">|B ∪ S| = |B| + |S| - |B ∩ S| = 60 + 50 - 30 = 80</div>
-          Siswa yang tidak mengikuti salah satu olahraga adalah:<br />
-          <div class="math-block">100 - 80 = 20</div>
+          <div class="math-block">|A|=>5<br>|B|=>4<br>|C|=>4<br>|A ∩ B|=4,5=>2<br>|A ∩ C|=5=>1<br>|B ∩ C|=5,7=>2<br>|A ∩ B ∩ C|=5=>1<br> Maka, |A U B U C| = 5+4+4-2-1-2+1=>9</div>
         </div>
       </article>
 
       <article class="question" aria-labelledby="q5">
         <h3 id="q5" class="question-title">Soal 5</h3>
         <p>Dalam sebuah kompetisi, 70 peserta menyukai matematika, 60 peserta menyukai fisika, dan 25 peserta menyukai keduanya. Berapa banyak peserta yang menyukai setidaknya satu dari kedua mata pelajaran?</p>
-        <button class="btn-show" aria-expanded="false" aria-controls="answer5" onclick="toggleAnswer(this, 'answer5')">Tampilkan Jawaban</button>
+        <button class="btn-show" aria-expanded="false" aria-controls="per5" onclick="toggleAnswer(this, 'per5')">Tampilkan Jawaban</button>
+        <div id="per5" class="answer" aria-live="polite" aria-hidden="true">
+        <input type="text" id="userAnswer5" placeholder="Ketik jawaban Anda di sini" aria-label="Jawaban Anda untuk Soal 5" />
+        <button class="btn-show" aria-expanded="false" aria-controls="answer5" onclick="checkAnswer(this, 'answer5', 'userAnswer5', 105)">Tampilkan Jawaban</button>
+        </div>
         <div id="answer5" class="answer" aria-live="polite" aria-hidden="true">
           <div class="math-block">|M ∪ F| = |M| + |F| - |M ∩ F| = 70 + 60 - 25 = 105</div>
           Jadi, 105 peserta menyukai setidaknya satu mata pelajaran.
@@ -345,17 +390,26 @@
 
       <article class="question" aria-labelledby="q6">
         <h3 id="q6" class="question-title">Soal 6</h3>
-        <p>A=1,2,3,4,5<br>B=4,5,6,7<br>C=5,7,8,9</p>
-        <button class="btn-show" aria-expanded="false" aria-controls="answer6" onclick="toggleAnswer(this, 'answer6')">Tampilkan Jawaban</button>
+        <p>Di sebuah acara, 80 orang hadir. 50 orang menyukai musik, 40 orang menyukai tari, dan 10 orang menyukai keduanya. Berapa banyak orang yang tidak menyukai musik maupun tari?</p>
+        <button class="btn-show" aria-expanded="false" aria-controls="per6" onclick="toggleAnswer(this, 'per6')">Tampilkan Jawaban</button>
+        <div id="per6" class="answer" aria-live="polite" aria-hidden="true">
+        <input type="text" id="userAnswer6" placeholder="Ketik jawaban Anda di sini" aria-label="Jawaban Anda untuk Soal 6" />
+        <button class="btn-show" aria-expanded="false" aria-controls="answer6" onclick="checkAnswer(this, 'answer6', 'userAnswer6', 80)">Tampilkan Jawaban</button>
+        </div>
         <div id="answer6" class="answer" aria-live="polite" aria-hidden="true">
-          <div class="math-block">|A|=5<br>|B|=4<br>|C|=4<br>|A ∩ B|=4,5=2<br>|A ∩ C|=5=1<br>|B ∩ C|=5,7=2<br>|A ∩ B ∩ C|=5=1<br> Maka, |A U B U C| = 5+4+4-2-1-2+1=9
+          <div class="math-block">|M ∪ T| = |M| + |T| - |M ∩ T| = 50 + 40 - 10 = 80</div>
+          Karena hasilnya menyamai total orang, tidak ada yang tidak menyukai keduanya.
         </div>
       </article>
 
       <article class="question" aria-labelledby="q7">
         <h3 id="q7" class="question-title">Soal 7</h3>
         <p>Dalam sebuah survei, 100 orang ditanya tentang hobi mereka. 60 orang menyukai membaca, 50 orang menyukai menulis, dan 20 orang menyukai keduanya. Berapa banyak orang yang tidak menyukai membaca maupun menulis?</p>
-        <button class="btn-show" aria-expanded="false" aria-controls="answer7" onclick="toggleAnswer(this, 'answer7')">Tampilkan Jawaban</button>
+        <button class="btn-show" aria-expanded="false" aria-controls="per7" onclick="toggleAnswer(this, 'per7')">Tampilkan Jawaban</button>
+        <div id="per7" class="answer" aria-live="polite" aria-hidden="true">
+        <input type="text" id="userAnswer7" placeholder="Ketik jawaban Anda di sini" aria-label="Jawaban Anda untuk Soal 7" />
+        <button class="btn-show" aria-expanded="false" aria-controls="answer7" onclick="checkAnswer(this, 'answer7', 'userAnswer7', 10)">Tampilkan Jawaban</button>
+        </div>
         <div id="answer7" class="answer" aria-live="polite" aria-hidden="true">
           <div class="math-block">|R ∪ W| = |R| + |W| - |R ∩ W| = 60 + 50 - 20 = 90</div>
           Orang yang tidak menyukai keduanya:<br />
@@ -366,7 +420,11 @@
       <article class="question" aria-labelledby="q8">
         <h3 id="q8" class="question-title">Soal 8</h3>
         <p>Di sebuah universitas, 200 mahasiswa terdaftar. 120 mahasiswa mengambil mata kuliah A, 100 mahasiswa mengambil mata kuliah B, dan 50 mahasiswa mengambil kedua mata kuliah tersebut. Berapa banyak mahasiswa yang tidak mengambil salah satu dari kedua mata kuliah?</p>
-        <button class="btn-show" aria-expanded="false" aria-controls="answer8" onclick="toggleAnswer(this, 'answer8')">Tampilkan Jawaban</button>
+        <button class="btn-show" aria-expanded="false" aria-controls="per8" onclick="toggleAnswer(this, 'per8')">Tampilkan Jawaban</button>
+        <div id="per8" class="answer" aria-live="polite" aria-hidden="true">
+        <input type="text" id="userAnswer8" placeholder="Ketik jawaban Anda di sini" aria-label="Jawaban Anda untuk Soal 8" />
+        <button class="btn-show" aria-expanded="false" aria-controls="answer8" onclick="checkAnswer(this, 'answer8', 'userAnswer8', 30)">Tampilkan Jawaban</button>
+        </div>
         <div id="answer8" class="answer" aria-live="polite" aria-hidden="true">
           <div class="math-block">|A ∪ B| = |A| + |B| - |A ∩ B| = 120 + 100 - 50 = 170</div>
           Jadi, mahasiswa yang tidak mengambil salah satu mata kuliah adalah:<br />
@@ -377,7 +435,11 @@
       <article class="question" aria-labelledby="q9">
         <h3 id="q9" class="question-title">Soal 9</h3>
         <p>Dalam sebuah kelas, 45 siswa menyukai olahraga, 30 siswa menyukai seni, dan 15 siswa menyukai keduanya. Berapa banyak siswa yang menyukai setidaknya satu dari kedua kegiatan tersebut?</p>
-        <button class="btn-show" aria-expanded="false" aria-controls="answer9" onclick="toggleAnswer(this, 'answer9')">Tampilkan Jawaban</button>
+        <button class="btn-show" aria-expanded="false" aria-controls="per9" onclick="toggleAnswer(this, 'per9')">Tampilkan Jawaban</button>
+        <div id="per9" class="answer" aria-live="polite" aria-hidden="true">
+        <input type="text" id="userAnswer9" placeholder="Ketik jawaban Anda di sini" aria-label="Jawaban Anda untuk Soal 9" />
+        <button class="btn-show" aria-expanded="false" aria-controls="answer9" onclick="checkAnswer(this, 'answer9', 'userAnswer9', 60)">Tampilkan Jawaban</button>
+        </div>
         <div id="answer9" class="answer" aria-live="polite" aria-hidden="true">
           <div class="math-block">|O ∪ S| = |O| + |S| - |O ∩ S| = 45 + 30 - 15 = 60</div>
           Jadi, 60 siswa menyukai setidaknya satu dari kedua kegiatan.
@@ -387,7 +449,11 @@
       <article class="question" aria-labelledby="q10">
         <h3 id="q10" class="question-title">Soal 10</h3>
         <p>Di sebuah festival, 150 orang hadir. 90 orang menyukai makanan, 70 orang menyukai minuman, dan 40 orang menyukai keduanya. Berapa banyak orang yang tidak menyukai makanan maupun minuman?</p>
-        <button class="btn-show" aria-expanded="false" aria-controls="answer10" onclick="toggleAnswer(this, 'answer10')">Tampilkan Jawaban</button>
+        <button class="btn-show" aria-expanded="false" aria-controls="per10" onclick="toggleAnswer(this, 'per10')">Tampilkan Jawaban</button>
+        <div id="per10" class="answer" aria-live="polite" aria-hidden="true">
+        <input type="text" id="userAnswer10" placeholder="Ketik jawaban Anda di sini" aria-label="Jawaban Anda untuk Soal 6" />
+        <button class="btn-show" aria-expanded="false" aria-controls="answer10" onclick="checkAnswer(this, 'answer10', 'userAnswer10', 30)">Tampilkan Jawaban</button>
+        </div>
         <div id="answer10" class="answer" aria-live="polite" aria-hidden="true">
           <div class="math-block">|M ∪ D| = |M| + |D| - |M ∩ D| = 90 + 70 - 40 = 120</div>
           Orang yang tidak menyukai keduanya:<br />
