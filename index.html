@@ -285,8 +285,10 @@
     <section id="penjelasan" aria-labelledby="penjelasan-heading">
       <h2 id="penjelasan-heading">Penjelasan Prinsip Inklusi dan Eksklusi</h2>
       <p>Prinsip inklusi-eksklusi (PIE) adalah suatu metode matematika untuk menghitung jumlah elemen dalam gabungan beberapa himpunan, dengan mempertimbangkan elemen-elemen yang tumpang tindih. <br>PIE membantu menghitung jumlah total elemen dalam gabungan dengan menghindari perhitungan ganda elemen yang ada di beberapa himpunan sekaligus. 
-        <br><br>Cara Kerja PIE:
-        <br><br>PIE bekerja dengan cara menjumlahkan jumlah elemen dalam setiap himpunan, kemudian mengurangkannya dengan jumlah elemen dalam irisan (tumpang tindih) antara himpunan-himpunan tersebut. <br>Jika masih ada irisan di antara irisan-irisan tersebut, maka harus dikurangi lagi, dan seterusnya.</p>
+      <br><br><button class="btn-show" aria-expanded="false" aria-controls="per" onclick="toggleAnswer(this, 'per')">Cara Kerja PIE</button>
+      <div id="per" class="per" aria-live="polite" aria-hidden="true">
+        <div class="math-block">PIE bekerja dengan cara menjumlahkan jumlah elemen dalam setiap himpunan, kemudian mengurangkannya dengan jumlah elemen dalam irisan (tumpang tindih) antara himpunan-himpunan tersebut. <br>Jika masih ada irisan di antara irisan-irisan tersebut, maka harus dikurangi lagi, dan seterusnya.</div>
+      </div>
       <div class="math-block" role="math" aria-label="Rumus Inklusi dan Eksklusi untuk dua himpunan">
         |A ∪ B| = |A| + |B| - |A ∩ B| 
       </div>
