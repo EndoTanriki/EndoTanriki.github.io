@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="id" class="no-js" data-theme="auto">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portofolio - Endo Tanriki</title>
+  <meta name="description" content="Portofolio pribadi: tentang saya, keahlian, proyek, dan cara menghubungi." />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="theme-color" content="#0ea5e9" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b1220" media="(prefers-color-scheme: dark)">
+  <meta property="og:title" content="Endo Tanriki — Portofolio" />
+  <meta property="og:description" content="Profil singkat, keahlian, proyek, dan kontak." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="favicon.svg" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Lewati ke konten utama</a>
+
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="Beranda">
+        <span class="logo" aria-hidden="true">
+          <svg viewBox="0 0 48 48" width="28" height="28" role="img" aria-label="Logo">
+            <defs>
+              <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#0ea5e9"/><stop offset="100%" stop-color="#6366f1"/>
+              </linearGradient>
+            </defs>
+            <circle cx="24" cy="24" r="22" fill="url(#g)"></circle>
+            <path d="M24 11l3.2 6.5 7.2 1-5.2 5.1 1.2 7.4L24 27.5 17.6 31l1.2-7.4-5.2-5.1 7.2-1L24 11z" fill="white" opacity="0.95"/>
+          </svg>
+        </span>
+        <span class="brand-text">Endo<span class="accent">Tanriki</span></span>
+      </a>
+
+      <nav class="nav" aria-label="Navigasi utama">
+        <button class="nav__toggle" id="menuToggle" aria-expanded="false" aria-controls="navList">
+          <span class="sr-only">Buka menu</span>
+          <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+        <ul class="nav__list" id="navList">
+          <li><a href="#tentang">Tentang</a></li>
+          <li><a href="#keahlian">Keahlian</a></li>
+          <li><a href="#proyek">Proyek</a></li>
+          <li><a href="#kontak">Kontak</a></li>
+        </ul>
+      </nav>
+
+      <button class="btn-icon" id="themeToggle" aria-pressed="false" title="Ganti tema (Terang/Gelap)">
+        <span class="sr-only">Ganti tema</span>
+        <svg class="icon-sun" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+          <path d="M12 4V2m0 20v-2M4 12H2m20 0h-2M5 5l-1.5-1.5M20.5 20.5 19 19M19 5l1.5-1.5M5 19 3.5 20.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+          <circle cx="12" cy="12" r="4" fill="currentColor"/>
+        </svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z" fill="currentColor"/>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="section hero" aria-label="Pembuka">
+      <div class="container grid-2">
+        <div class="hero__text" data-reveal>
+          <p class="eyebrow">Halo, saya</p>
+          <h1 class="hero__title">
+          <span class="grad-text">Endo <wbr>Tanriki</span>
+          </h1>
+          <p class="hero__tagline">Saya <strong>Fullstack Developer</strong>, saya suka membangun pengalaman web yang cepat, halus, dan bermanfaat, Saya juga suka membuat mode in-game seperti Map Roblox atau membuat server game seperti Minecraft.</p>
+          <div class="hero__cta">
+            <a class="btn btn--primary" href="#proyek">Lihat Proyek</a>
+            <a class="btn btn--ghost" href="#kontak">Email Saya</a>
+          </div>
+          <ul class="socials">
+            <li><a class="social" href="#" aria-label="GitHub"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M12 .5a12 12 0 0 0-3.79 23.4c.6.11.82-.26.82-.58v-2.02c-3.34.73-4.04-1.61-4.04-1.61-.55-1.4-1.35-1.78-1.35-1.78-1.1-.75.09-.74.09-.74 1.22.09 1.86 1.25 1.86 1.25 1.08 1.85 2.83 1.32 3.52 1.01.11-.79.42-1.32.76-1.62-2.67-.31-5.47-1.34-5.47-5.98 0-1.32.47-2.39 1.24-3.23-.12-.31-.54-1.56.12-3.25 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.05.14 3 .4 2.29-1.55 3.3-1.23 3.3-1.23.66 1.69.24 2.94.12 3.25.78.84 1.24 1.91 1.24 3.23 0 4.65-2.81 5.66-5.49 5.97.43.37.81 1.11.81 2.25v3.34c0 .32.22.7.82.58A12 12 0 0 0 12 .5"/></svg></a></li>
+            <li><a class="social" href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4V23h-4V8zm7 0h3.8v2.05h.05c.53-1 1.82-2.05 3.75-2.05C20 8 21 11 21 15.1V23h-4v-7.3c0-1.74-.03-3.98-2.43-3.98-2.43 0-2.8 1.9-2.8 3.86V23h-4V8z"/></svg></a></li>
+            <li><a class="social" href="#" aria-label="Email"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5L4 8V6l8 5 8-5Z"/></svg></a></li>
+          </ul>
+        </div>
+        <!-- Foto (akan kepakai nanti)
+        <div class="hero__art" data-reveal>
+          <div class="avatar">
+            <img src="data:image/svg+xml;utf8,<?xml version='1.0' encoding='UTF-8'?><svg xmlns='link' width='480' height='480' viewBox='0 0 480 480'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0%' stop-color='%230ea5e9'/><stop offset='100%' stop-color='%236366f1'/></linearGradient></defs><rect width='480' height='480' rx='48' fill='url(%23g)'/><text x='50%' y='52%' dominant-baseline='middle' text-anchor='middle' font-family='Segoe UI, Roboto, Arial' font-size='160' fill='white' opacity='0.9'>NK</text></svg>" alt="Foto/Ilustrasi Profil">
+          </div>
+        </div>
+        <div class="hero__shade" aria-hidden="true"></div>
+      </div> -->
+    </section>
+
+    <!-- TENTANG -->
+    <section id="tentang" class="section" aria-labelledby="h-tentang">
+      <div class="container grid-2">
+        <div data-reveal>
+          <h2 id="h-tentang">Tentang Saya</h2>
+          <p>Saya suka membangun produk digital yang <em>simple</em>. Fokus saya pada performa, aksesibilitas, dan detail kecil yang membuat UI terasa <em>smooth</em> dan menyenangkan.</p>
+          <ul class="facts">
+            <li><span>Domisili</span><strong>Dumai/Riau</strong></li>
+            <li><span>Email</span><strong><a href="mailto:tanendo18@gmail.com">tanendo18@gmail.com</a></strong> <button class="chip chip--icon" data-copy="emailkamu@contoh.com" aria-label="Salin email"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M16 1H4a2 2 0 0 0-2 2v12h2V3h12V1Zm3 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2Zm0 16H8V7h11v14Z"/></svg> Salin</button></li>
+            <li><span>Status</span><strong>Pelajar</strong></li>
+          </ul>
+          <div class="actions">
+            <!-- ke CV-->
+            <a class="btn btn--primary" href="#" target="_blank" rel="noopener">Unduh CV</a>
+            <a class="btn btn--ghost" href="#kontak">Ajak Kolaborasi</a>
+          </div>
+        </div>
+        <div data-reveal>
+          <div class="card">
+            <h3>Filosofi Desain</h3>
+            <p>Utamakan kejelasan, konsistensi, dan ritme interaksi yang terasa alami. Animasi seperlunya untuk menegaskan makna, bukan sekadar kosmetik.</p>
+            <h3>Nilai Teknis</h3>
+            <ul class="tick">
+              <li>Responsif & cepat dimuat</li>
+              <li>Aksesibel (keyboard & reader friendly)</li>
+              <li>Clean code & mudah di-maintain</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- KEAHLIAN -->
+    <section id="keahlian" class="section" aria-labelledby="h-keahlian">
+      <div class="container">
+        <h2 id="h-keahlian" data-reveal>Keahlian</h2>
+        <div class="skills" data-reveal>
+          <!-- Skill -->
+          <span class="chip">HTML</span>
+          <span class="chip">CSS</span>
+          <span class="chip">JavaScript</span>
+          <span class="chip">C++</span>
+          <span class="chip">C</span>
+          <span class="chip">Phyton</span>
+          <span class="chip">Java</span>
+          <span class="chip">Luau</span>
+          <span class="chip">Kotlin</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROYEK -->
+    <section id="proyek" class="section" aria-labelledby="h-proyek">
+      <div class="container">
+        <h2 id="h-proyek" data-reveal>Proyek Pilihan</h2>
+
+        <div class="projects">
+          <!-- Card 1 -->
+          <article class="project-card" data-reveal>
+            <picture class="project-card__media">
+              <img loading="lazy" alt="Cuplikan proyek 1" src="Minecraft-Logo.png"/>
+            </picture>
+            <div class="project-card__body">
+              <div>
+                <h3>Server Minecraft</h3>
+                <p>Proyek utama saya adalah membuat server Minecraft yang nyaman untuk di mainkan bersama teman real life, teman virtual, maupun kekasih player dengan sistem keamanan yang diperketat oleh pengawasan admin agar tidak ada <strong> Hacker</strong> </p>
+                <ul class="tags">
+                  <li>Java</li>
+                </ul>
+              </div>
+              <div class="project-card__actions">
+                <a class="btn btn--ghost" href="#" target="_blank" rel="noopener">Lihat Demo</a>
+                <a class="btn btn--primary" href="#" target="_blank" rel="noopener">Kode Sumber</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="project-card" data-reveal>
+            <picture class="project-card__media">
+              <img loading="lazy" alt="Cuplikan proyek 2" src="roblox.png"/>
+            </picture>
+            <div class="project-card__body">
+              <div>
+                <h3>Map Obby Roblox</h3>
+                <p>Saya memilih untuk membuat proyek ini karena saya ingin semua orang memainkan game obby yang lebih menantang dan tidak pay2win serta dapat di mainkan oleh siapa saja.</p>
+                <ul class="tags">
+                  <li>Luau</li>
+                </ul>
+              </div>
+              <div class="project-card__actions">
+                <a class="btn btn--ghost" href="#" target="_blank" rel="noopener">Lihat Demo</a>
+                <a class="btn btn--primary" href="#" target="_blank" rel="noopener">Kode Sumber</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="project-card" data-reveal>
+            <picture class="project-card__media">
+              <img loading="lazy" alt="Cuplikan proyek 3" src="roblox.png"/>
+            </picture>
+            <div class="project-card__body">
+              <div>
+                <h3>Map FPS Roblox</h3>
+                <p>Saya berhasil membuat proyek ini dengan senjata yang tidak sulit bagi player PC dan saya memastikan tidak ada sistem pay2win di map ini agar semua orang mendapatkan kesenangan saat bermain bukan haus akan kemenangan.</p>
+                <ul class="tags">
+                  <li>Luau</li>
+                </ul>
+              </div>
+              <div class="project-card__actions">
+                <a class="btn btn--ghost" href="#" target="_blank" rel="noopener">Lihat Demo</a>
+                <a class="btn btn--primary" href="#" target="_blank" rel="noopener">Kode Sumber</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- KONTAK -->
+    <section id="kontak" class="section" aria-labelledby="h-kontak">
+      <div class="container grid-2">
+        <div data-reveal>
+          <h2 id="h-kontak">Mari Terhubung</h2>
+          <p>Ingin berdiskusi soal proyek atau kolaborasi? Kirim pesan via formulir di samping, atau langsung email ke <a href="mailto:tanendo18@gmail.com">tanendo18@gmail.com</a>.</p>
+          <div class="card">
+            <h3>Preferensi</h3>
+            <ul class="tick">
+              <li>Jam Aktif fleksibel (WIB)</li>
+              <li>Komunikasi: email / chat</li>
+              <li>Kontrak: project‑based atau <strong>retainer</strong></li>
+            </ul>
+          </div>
+        </div>
+
+        <div data-reveal>
+          <form id="contactForm" class="form" autocomplete="on" novalidate>
+            <div class="form__row">
+              <label for="f-name">Nama</label>
+              <input id="f-name" name="name" type="text" placeholder="Nama Anda" required minlength="2" />
+              <small class="error" aria-live="polite"></small>
+            </div>
+            <div class="form__row">
+              <label for="f-email">Email</label>
+              <input id="f-email" name="email" type="email" inputmode="email" placeholder="nama@domain.com" required />
+              <small class="error" aria-live="polite"></small>
+            </div>
+            <div class="form__row">
+              <label for="f-message">Pesan</label>
+              <textarea id="f-message" name="message" rows="5" placeholder="Ceritakan kebutuhanmu..." required minlength="10"></textarea>
+              <small class="error" aria-live="polite"></small>
+            </div>
+
+            <div class="form__actions">
+              <button class="btn btn--primary" type="submit">Kirim</button>
+              <button class="btn btn--ghost" type="reset">Reset</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <button class="to-top" id="toTop" aria-label="Kembali ke atas">
+    <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+      <path d="M12 19V5m0 0-7 7m7-7 7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="y"></span> EndoTan1. Dibuat dengan ♥︎ dan perhatian pada detail.</p>
+      <ul class="footer-links">
+        <li><a href="#top">Beranda</a></li>
+        <li><a href="#tentang">Tentang</a></li>
+        <li><a href="#proyek">Proyek</a></li>
+        <li><a href="#kontak">Kontak</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <noscript>
+    <style>.no-js [data-reveal]{opacity:1; transform:none}</style>
+    <div class="container" style="padding:1rem 0; text-align:center">
+      <small>JavaScript nonaktif — animasi dinonaktifkan.</small>
+    </div>
+  </noscript>
+</body>
+</html>
